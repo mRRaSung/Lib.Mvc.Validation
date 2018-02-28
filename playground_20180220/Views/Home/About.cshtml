@@ -1,0 +1,77 @@
+﻿@using System.Globalization;
+@using System.Text.RegularExpressions;
+
+
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+@ExternalAnchor("http://google.com", "Google")
+
+@helper ExternalAnchor(string href, string text)
+    {
+        <a href="@href" class="btn" rel="external">@text</a>
+}
+
+@ExternalAnchor("http://google.com", "Yahoo")
+
+@My.ExternalAnchor("http://youtube.tw", "Youtube")
+
+
+
+@ChangeTaiwanCalendar()
+
+@functions
+{
+    public string ChangeTaiwanCalendar()
+    {
+        var tc = new TaiwanCalendar();
+        var now = DateTime.Now;
+        var regex = new Regex(@"[yY]+");
+
+        return DateTime.Now.ToString(tc.GetYear(now).ToString("000") + "-MM-dd ddd");
+    }
+}
+
+
+
+@*@using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <label for="q">Search</label>
+            <input class="form-control" id="q" name="q" />
+            <button>Go</button>
+        </div>
+    }*@
+
+
+@using (Ajax.BeginForm(new AjaxOptions() {
+    UpdateTargetId = "ajax",
+    Confirm ="Hello",
+    InsertionMode =InsertionMode.InsertAfter }))
+{
+    <div class="form-group">
+        <label for="q">Search</label>
+        <input class="form-control" id="q" name="q" />
+        <button>Go</button>
+    </div>
+}
+
+<div id="ajax" class="alert alert-warning" role="alert">
+    You're searching : @ViewData["q"]
+</div>
+
+<div class="alert alert-warning" role="alert">
+    @(DateTime.Now)
+</div>
+
+@section scripts{
+    
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
+
+
