@@ -96,3 +96,5 @@ D:\_Ryan\_PROD\Lib.Mvc.Validation\playground_20180220\obj\Debug\playground_20180
 D:\_Ryan\_PROD\Lib.Mvc.Validation\playground_20180220\obj\Debug\playground_20180220.csproj.CoreCompileInputs.cache
 D:\_Ryan\_PROD\Lib.Mvc.Validation\playground_20180220\obj\Debug\playground_20180220.dll
 D:\_Ryan\_PROD\Lib.Mvc.Validation\playground_20180220\obj\Debug\playground_20180220.pdb
+D:\_Ryan\_PROD\Lib.Mvc.Validation\playground_20180220\bin\Ryan.Validation.dll
+D:\_Ryan\_PROD\Lib.Mvc.Validation\playground_20180220\bin\Ryan.Validation.pdb
